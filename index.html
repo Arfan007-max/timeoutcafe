@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Out Café Hoogeveen – Binnenkort open</title>
+<meta name="description" content="Time Out Café opent binnenkort in Hoogeveen: een gezellig café en restaurant voor een drankje, een hapje en een fijne avond.">
+<meta property="og:title" content="Time Out Café Hoogeveen – Binnenkort open">
+<meta property="og:description" content="Gezellig café en restaurant in Hoogeveen. Binnenkort open!">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg: #2b1d14;
+    --bg-2: #3a2619;
+    --cream: #f6ead6;
+    --gold: #e0a64a;
+    --gold-2: #f2c879;
+    --muted: #cdb89a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--cream);
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(224,166,74,.28), transparent 60%),
+      radial-gradient(ellipse at 50% 100%, rgba(224,166,74,.15), transparent 55%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    text-align: center;
+  }
+  main { max-width: 640px; width: 100%; }
+  .lamps { display: flex; justify-content: center; gap: 36px; margin-bottom: 18px; }
+  .lamp { width: 2px; background: var(--muted); position: relative; opacity: .8; }
+  .lamp::after {
+    content: ""; position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%);
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--gold-2);
+    box-shadow: 0 0 30px 10px rgba(242,200,121,.55);
+    animation: glow 3s ease-in-out infinite;
+  }
+  .lamp:nth-child(1) { height: 40px; }
+  .lamp:nth-child(2) { height: 70px; }
+  .lamp:nth-child(3) { height: 50px; }
+  .lamp:nth-child(2)::after { animation-delay: .8s; }
+  .lamp:nth-child(3)::after { animation-delay: 1.6s; }
+  @keyframes glow { 50% { box-shadow: 0 0 40px 16px rgba(242,200,121,.75); } }
+  .badge {
+    display: inline-block; margin-top: 44px;
+    border: 1px solid var(--gold); color: var(--gold-2);
+    padding: 6px 18px; border-radius: 999px;
+    letter-spacing: .25em; text-transform: uppercase; font-size: .8rem;
+  }
+  h1 { font-size: clamp(2.6rem, 10vw, 4.6rem); line-height: 1.05; margin: 22px 0 8px; font-weight: 700; }
+  h1 span { color: var(--gold-2); font-style: italic; }
+  .sub { color: var(--muted); font-size: 1.15rem; margin-bottom: 28px; }
+  .line { width: 80px; height: 2px; background: var(--gold); margin: 0 auto 28px; }
+  p.lead { font-size: 1.15rem; line-height: 1.7; margin-bottom: 32px; }
+  .info {
+    display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 32px;
+  }
+  .card {
+    background: rgba(255,255,255,.06); border: 1px solid rgba(224,166,74,.3);
+    border-radius: 14px; padding: 14px 20px; min-width: 180px;
+  }
+  .card small { display: block; color: var(--muted); text-transform: uppercase; letter-spacing: .15em; font-size: .7rem; margin-bottom: 4px; }
+  .card strong { font-size: 1.05rem; }
+  a { color: var(--gold-2); }
+  .social a {
+    display: inline-block; margin: 0 8px; padding: 10px 22px; border-radius: 999px;
+    background: var(--gold); color: #2b1d14; text-decoration: none; font-weight: 700;
+    transition: transform .15s, background .15s;
+  }
+  .social a:hover { background: var(--gold-2); transform: translateY(-2px); }
+  footer { margin-top: 36px; color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<main>
+  <div class="lamps" aria-hidden="true">
+    <div class="lamp"></div><div class="lamp"></div><div class="lamp"></div>
+  </div>
+
+  <span class="badge">Binnenkort open</span>
+  <h1>Time Out <span>Café</span></h1>
+  <p class="sub">Kroeg &amp; restaurant in Hoogeveen</p>
+  <div class="line"></div>
+
+  <p class="lead">
+    Even bijkomen, lekker eten, een koud drankje en goed gezelschap.<br>
+    Wij werken hard aan ons nieuwe plekje in Hoogeveen.<br>
+    Houd ons in de gaten, we zien je graag snel!
+  </p>
+
+  <div class="info">
+    <div class="card"><small>Plaats</small><strong>Hoogeveen</strong></div>
+    <div class="card"><small>Opening</small><strong>Datum volgt</strong></div>
+    <div class="card"><small>Contact</small><strong><a href="mailto:info@timeoutcafe.nl">info@timeoutcafe.nl</a></strong></div>
+  </div>
+
+  <div class="social">
+    <a href="#" rel="noopener">Instagram</a>
+    <a href="#" rel="noopener">Facebook</a>
+  </div>
+
+  <footer>&copy; 2026 Time Out Café · Hoogeveen</footer>
+</main>
+</body>
+</html>
