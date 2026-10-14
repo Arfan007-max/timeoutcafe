@@ -157,4 +157,66 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
   .hero.laag .wrap { min-height: 37vh; }
 }
 
+/* ===== Homepage: onderdelen onder het welkomstblok ===== */
+/* Foto-vlakken: voorlopig dezelfde foto in verschillende uitsneden, later eigen foto's.
+   Zet bij een vlak style="--foto: url('images/nieuw/naam.jpg')" om een eigen foto te tonen. */
+.foto {
+  background-image: linear-gradient(180deg, rgba(42,26,16,.15), rgba(29,16,9,.55)), var(--foto, url("images/hero.jpg")), url("images/hero-placeholder.svg");
+  background-size: cover, var(--zoom, cover), cover;
+  background-position: center, var(--pos, center), center;
+  background-repeat: no-repeat;
+  background-color: var(--bruin-donker);
+}
+
+.v-kop { margin-bottom: 1.4rem; }
+.v-kop h2 { font-size: 1.9rem; }
+.v-kop p { opacity: .85; margin-top: .3rem; }
+.v-kop.midden { text-align: center; }
+
+/* Nu op de tap */
+.tap-kaart { background: rgba(29,16,9,.65); border: 1px solid var(--lijn); border-radius: 10px; padding: 1.4rem; box-shadow: 0 0 24px rgba(243,201,120,.08); }
+.tap-lijst { list-style: none; }
+.tap-lijst li { display: grid; grid-template-columns: auto 1fr auto; gap: .2rem .7rem; align-items: baseline; padding: .55rem 0; border-bottom: 1px dotted var(--lijn); }
+.tap-lijst li:last-child { border-bottom: 0; }
+.tap-lijst .naam { font-weight: 700; }
+.tap-lijst .stijl { opacity: .75; font-size: .92rem; }
+.tap-lijst .sterkte { color: var(--amber-licht); font-variant-numeric: tabular-nums; font-weight: 700; }
+.tap-lijst .stijl::before { content: "·"; margin-right: .5rem; color: var(--amber); }
+.tap-noot { font-size: .85rem; opacity: .7; margin-top: .8rem; }
+
+/* Rij met kleine blokjes + icoon */
+.icoon-rij { display: grid; gap: 1rem; grid-template-columns: repeat(2, 1fr); }
+.icoon-blok { text-align: center; background: rgba(29,16,9,.65); border: 1px solid var(--lijn); border-radius: 10px; padding: 1.3rem .8rem; }
+.icoon-blok svg { width: 46px; height: 46px; stroke: var(--amber); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; margin-bottom: .5rem; }
+.icoon-blok h3 { font-size: 1.15rem; color: var(--amber); }
+.icoon-blok p { font-size: .95rem; opacity: .85; margin-top: .2rem; }
+
+/* Verhaal: foto naast tekst */
+.verhaal { display: grid; gap: 1.4rem; align-items: center; }
+.verhaal .beeld { min-height: 280px; border-radius: 10px; border: 1px solid var(--lijn); }
+.verhaal h2 { margin-bottom: .6rem; }
+.verhaal p + p { margin-top: .8rem; }
+.meer-knop { margin-top: 1.4rem; }
+
+/* Oproep onderaan */
+.cta { text-align: center; padding: 3.2rem 0; border-top: 1px solid var(--lijn); background: radial-gradient(ellipse 60% 100% at 50% 100%, rgba(243,201,120,.18), transparent 75%); }
+.cta h2 { font-size: 2rem; margin-bottom: .4rem; }
+.cta p { opacity: .85; margin-bottom: 1.4rem; }
+
+/* Drie knoppen naast elkaar, in de kleuren van het origineel */
+.cta-rij { container-type: inline-size; display: flex; flex-wrap: nowrap; gap: .7rem; justify-content: center; max-width: 34rem; margin-inline: auto; }
+.cta-rij a { flex: 1 1 0; min-width: 0; display: inline-flex; align-items: center; justify-content: center; gap: .45rem; padding: .8rem .6rem; border-radius: 999px; text-decoration: none; font-weight: 700; font-family: Arial, Helvetica, sans-serif; font-size: .95rem; white-space: nowrap; color: #fff; box-shadow: 0 6px 18px rgba(0,0,0,.45); transition: transform .15s; }
+.cta-rij a:hover { transform: translateY(-2px); }
+.cta-rij a svg { flex: none; }
+.cta-rij a.bel { background: var(--amber); color: var(--bruin-donker); }
+.cta-rij a.route { background: #4285F4; }
+.cta-rij a.wa { background: #25D366; }
+@container (max-width: 400px) { .cta-rij .tekst { display: none; } }
+
+@media (min-width: 760px) {
+  .icoon-rij { grid-template-columns: repeat(4, 1fr); }
+  .verhaal { grid-template-columns: 1fr 1fr; gap: 2.4rem; }
+  .verhaal.omgekeerd .beeld { order: 2; }
+}
+
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }

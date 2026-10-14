@@ -34,6 +34,17 @@ Open `site.js`. Bovenaan staat het blok `SITE`. Pas daar adres, telefoon, e-mail
 
 Openingstijden zijn nu `00.00 - 00.00`. Vervang ze, bijvoorbeeld door `16.00 - 00.00` of `Gesloten`.
 
+## Homepage aanpassen
+
+Onder het blok "Welkom in ons café" staan op de homepage (`index.html`) deze onderdelen:
+
+- **Een bruin café voor iedereen:** foto naast een korte tekst. Pas de tekst direct in `index.html` aan.
+- **Nu op de tap:** een lijstje met bieren. Elke regel is één `<li>`. Pas naam, stijl en percentage aan, kopieer een regel om een bier toe te voegen of verwijder een regel. Zet bij een nieuw seizoensbier de naam erbij.
+- **Wat je bij ons kunt doen:** vier blokjes met een icoon (bier, live muziek, darten, voetbal kijken). Pas titel en tekst aan.
+- **Kom je langs?:** drie knoppen (Bel ons, Route, WhatsApp). Het telefoonnummer, het adres en het WhatsApp-nummer komen uit `site.js`.
+
+Foto's in de vlakken op de homepage zijn nu uitsneden van de bannerfoto. Een eigen foto zet je zo in een vlak: zoek in `index.html` het vlak met `class="beeld foto"` en voeg achter `style="` dit toe: `--foto: url('images/jouw-foto.jpg');`.
+
 ## Menu-items aanpassen
 
 Open `menu.html`. Elk product is één regel:
