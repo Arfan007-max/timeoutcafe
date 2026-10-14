@@ -138,12 +138,15 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
   .menu-raster { grid-template-columns: 1fr 1fr; }
 }
 
+.info-raster.een { max-width: 32rem; }
+
 /* Vanaf tablet */
 @media (min-width: 760px) {
   .menu-knop { display: none; }
   .hoofdmenu { display: flex; position: static; background: none; border: 0; padding: 0; gap: 1.6rem; }
   .hoofdmenu a { border: 0; padding: .4rem 0; }
   .info-raster { grid-template-columns: 1fr 1fr; }
+  .info-raster.een { grid-template-columns: 1fr; }
   .footer-raster { grid-template-columns: repeat(3, 1fr); }
   .hero .wrap { min-height: 74vh; }
 }
