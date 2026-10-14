@@ -10,6 +10,7 @@ const SITE = {
   email: "timeoutcafehoogeveen@gmail.com",
   facebook: "#",   // vul hier de link naar jullie Facebook-pagina in
   instagram: "#",  // vul hier de link naar jullie Instagram-pagina in
+  whatsappNummer: "31611167190",  // WhatsApp-nummer zonder 0 en zonder +, met landcode
   // Openingstijden: pas de tijden aan, bijvoorbeeld "16.00 - 00.00" of "Gesloten"
   tijden: [
     ["Maandag", "00.00 - 00.00"],
@@ -69,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     else if (sleutel === "emailHref") el.href = "mailto:" + SITE.email;
     else if (sleutel === "facebookHref") el.href = SITE.facebook;
     else if (sleutel === "instagramHref") el.href = SITE.instagram;
+    else if (sleutel === "whatsappHref") el.href = "https://wa.me/" + SITE.whatsappNummer;
     else if (SITE[sleutel]) el.textContent = SITE[sleutel];
   });
 
