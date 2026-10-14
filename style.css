@@ -93,6 +93,43 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
 .social a:hover { border-color: var(--amber-licht); color: var(--amber-licht); }
 .kleinste { margin-top: 1.6rem; padding-top: 1rem; border-top: 1px solid rgba(243,231,208,.15); font-size: .85rem; opacity: .7; text-align: center; }
 
+/* Pagina-kop (menu, agenda, contact) */
+.pagina-kop { padding: 2.6rem 0 1.6rem; border-bottom: 1px solid var(--lijn); text-align: center; background: radial-gradient(ellipse 60% 100% at 50% 0%, rgba(243,201,120,.18), transparent 75%); }
+.pagina-kop h1 { font-size: clamp(2.2rem, 8vw, 3.4rem); text-shadow: 0 0 30px rgba(243,201,120,.35); }
+.pagina-kop p { opacity: .85; margin-top: .4rem; }
+
+/* Menukaart */
+.menu-raster { display: grid; gap: 1.4rem; }
+.menu-categorie { background: rgba(29,16,9,.65); border: 1px solid var(--lijn); border-radius: 10px; padding: 1.4rem; box-shadow: 0 0 24px rgba(243,201,120,.08); }
+.menu-categorie h2 { font-size: 1.5rem; color: var(--amber); margin-bottom: .8rem; }
+.menu-lijst { list-style: none; }
+.menu-lijst li { display: flex; align-items: baseline; gap: .6rem; padding: .45rem 0; }
+.menu-lijst li::after { content: ""; order: 1; flex: 1; border-bottom: 1px dotted var(--lijn); }
+.menu-lijst .naam { order: 0; }
+.menu-lijst .prijs { order: 2; font-variant-numeric: tabular-nums; color: var(--amber-licht); font-weight: 700; }
+.menu-lijst small { opacity: .7; }
+
+/* Agenda */
+.agenda-lijst { list-style: none; display: grid; gap: 1rem; max-width: 46rem; margin-inline: auto; }
+.evenement { display: flex; gap: 1.1rem; background: rgba(29,16,9,.65); border: 1px solid var(--lijn); border-radius: 10px; padding: 1.2rem; }
+.evenement .datum { flex: 0 0 4.2rem; height: 4.6rem; text-align: center; background: var(--amber); color: var(--bruin-donker); border-radius: 8px; display: flex; flex-direction: column; justify-content: center; line-height: 1; box-shadow: 0 0 16px rgba(243,201,120,.35); }
+.evenement .datum b { font-family: var(--font-kop); font-size: 1.8rem; }
+.evenement .datum span { text-transform: uppercase; font-size: .8rem; letter-spacing: .12em; margin-top: .2rem; font-weight: 700; }
+.evenement h3 { font-size: 1.35rem; color: var(--amber); margin-bottom: .2rem; }
+.evenement .wanneer { font-size: .92rem; opacity: .75; margin-bottom: .4rem; }
+.evenement .wanneer::first-letter { text-transform: uppercase; }
+.leeg { text-align: center; opacity: .8; }
+
+/* Contact */
+.tekstlink { color: var(--amber-licht); }
+.social-rij { display: flex; flex-wrap: wrap; gap: .6rem; }
+.kaart-embed { margin-top: 1.4rem; border: 1px solid var(--lijn); border-radius: 10px; overflow: hidden; background: var(--bruin-donker); }
+.kaart-embed iframe { display: block; width: 100%; height: 340px; border: 0; }
+
+@media (min-width: 760px) {
+  .menu-raster { grid-template-columns: 1fr 1fr; }
+}
+
 /* Vanaf tablet */
 @media (min-width: 760px) {
   .menu-knop { display: none; }

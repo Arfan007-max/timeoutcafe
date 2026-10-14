@@ -32,6 +32,9 @@ const PAGINAS = [
 const mapsLink = "https://www.google.com/maps/search/?api=1&query=" +
   encodeURIComponent(SITE.adres + ", " + SITE.plaats);
 
+const mapsEmbed = "https://www.google.com/maps?q=" +
+  encodeURIComponent(SITE.adres + ", " + SITE.plaats) + "&output=embed";
+
 function tijdenRijen() {
   return SITE.tijden.map(([dag, tijd]) => `<tr><td>${dag}</td><td>${tijd}</td></tr>`).join("");
 }
@@ -71,9 +74,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const sleutel = el.dataset.site;
     if (sleutel === "tijden") el.innerHTML = tijdenRijen();
     else if (sleutel === "maps") el.href = mapsLink;
+    else if (sleutel === "mapsEmbed") el.src = mapsEmbed;
     else if (sleutel === "adres") el.innerHTML = `${SITE.adres}<br>${SITE.plaats}`;
+    else if (sleutel === "telefoonHref") el.href = "tel:" + SITE.telefoonLink;
+    else if (sleutel === "emailHref") el.href = "mailto:" + SITE.email;
+    else if (sleutel === "facebookHref") el.href = SITE.facebook;
+    else if (sleutel === "instagramHref") el.href = SITE.instagram;
     else if (SITE[sleutel]) el.textContent = SITE[sleutel];
   });
+
+  toonAgenda();
 
   // Mobiel menu
   const knop = document.querySelector(".menu-knop");
@@ -83,3 +93,32 @@ document.addEventListener("DOMContentLoaded", () => {
     knop.setAttribute("aria-expanded", String(open));
   });
 });
+
+/* Agenda: toont de evenementen uit events.js, op datum gesorteerd, zonder datums die voorbij zijn */
+function toonAgenda() {
+  const lijst = document.getElementById("agenda-lijst");
+  if (!lijst || typeof EVENTS === "undefined") return;
+
+  const vandaag = new Date();
+  vandaag.setHours(0, 0, 0, 0);
+  const maanden = ["jan", "feb", "mrt", "apr", "mei", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+  const dagen = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"];
+
+  const komend = EVENTS
+    .map(e => ({ ...e, d: new Date(e.datum + "T00:00:00") }))
+    .filter(e => !isNaN(e.d) && e.d >= vandaag)
+    .sort((a, b) => a.d - b.d);
+
+  const tekst = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+  lijst.innerHTML = komend.map(e => `<li class="evenement">
+    <div class="datum" aria-hidden="true"><b>${e.d.getDate()}</b><span>${maanden[e.d.getMonth()]}</span></div>
+    <div class="evenement-tekst">
+      <h3>${tekst(e.titel)}</h3>
+      <p class="wanneer">${dagen[e.d.getDay()]} ${e.d.getDate()} ${maanden[e.d.getMonth()]} ${e.d.getFullYear()}${e.tijd ? " &middot; " + tekst(e.tijd) : ""}</p>
+      <p>${tekst(e.omschrijving)}</p>
+    </div></li>`).join("");
+
+  const leeg = document.getElementById("agenda-leeg");
+  if (leeg) leeg.hidden = komend.length > 0;
+}
