@@ -121,6 +121,10 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
 /* Contact */
 .tekstlink { color: var(--amber-licht); }
 .social-rij { gap: .6rem; }
+/* Contactpagina: Facebook en Instagram onderaan de kolom "Adres & contact", samen precies de hele breedte */
+.info-raster.drie .kaart:first-child { display: flex; flex-direction: column; }
+.info-raster.drie .kaart:first-child .social { margin-top: auto; padding-top: 1.2rem; }
+.info-raster.drie .kaart:first-child .social a { max-width: none; }
 .kaart-embed { position: relative; border: 1px solid var(--lijn); border-radius: 10px; overflow: hidden; background: var(--bruin-donker); min-height: 320px; }
 .kaart-link { position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 1rem; text-decoration: none; }
 .kaart-link span { background: var(--amber); color: var(--bruin-donker); font-weight: 700; padding: .55rem 1.2rem; border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.5); transition: transform .15s; }
