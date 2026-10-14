@@ -69,10 +69,8 @@ function bouwFooter() {
           <a class="fb" href="${SITE.facebook}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="#fff" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H6v4h3v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg>Facebook</a>
         </div></div>` : "";
   const raster = (contactBlok || volgBlok) ? `<div class="footer-raster">${contactBlok}${volgBlok}</div>` : "";
-  return `<footer class="site-footer"><div class="wrap">
-    ${raster}
-    <p class="kleinste">&copy; ${new Date().getFullYear()} ${SITE.naam} &middot; ${SITE.plaats}</p>
-  </div></footer>`;
+  if (!raster) return "";   // geen blokken in de footer: dan ook geen footer
+  return `<footer class="site-footer"><div class="wrap">${raster}</div></footer>`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
