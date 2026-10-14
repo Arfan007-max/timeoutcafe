@@ -1,0 +1,95 @@
+/* Extra stijl voor de homepage-voorstellen. Bouwt voort op style.css (zelfde kleuren en lettertypen). */
+
+/* Foto-vlakken: voorlopig dezelfde foto in verschillende uitsneden, later eigen foto's.
+   Zet bij een vlak style="--foto: url('images/nieuw/naam.jpg')" om een eigen foto te tonen. */
+.foto {
+  background-image: linear-gradient(180deg, rgba(42,26,16,.15), rgba(29,16,9,.55)), var(--foto, url("images/hero.jpg")), url("images/hero-placeholder.svg");
+  background-size: cover, var(--zoom, cover), cover;
+  background-position: center, var(--pos, center), center;
+  background-repeat: no-repeat;
+  background-color: var(--bruin-donker);
+}
+
+.v-kop { margin-bottom: 1.4rem; }
+.v-kop h2 { font-size: 1.9rem; }
+.v-kop p { opacity: .85; margin-top: .3rem; }
+.v-kop.midden { text-align: center; }
+
+/* Drie fotokaarten */
+.fotokaarten { display: grid; gap: 1rem; }
+.fotokaart {
+  position: relative; display: flex; align-items: flex-end; min-height: 300px; border-radius: 10px; overflow: hidden;
+  border: 1px solid var(--lijn); text-decoration: none; color: var(--creme); box-shadow: 0 0 24px rgba(243,201,120,.08);
+  transition: transform .2s, box-shadow .2s;
+}
+.fotokaart::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(29,16,9,.92)); }
+.fotokaart:hover { transform: translateY(-3px); box-shadow: 0 0 30px rgba(243,201,120,.25); }
+.fotokaart .tekst { position: relative; z-index: 1; padding: 1.3rem; }
+.fotokaart h3 { font-size: 1.6rem; color: var(--amber); }
+.fotokaart p { margin-top: .2rem; }
+.fotokaart .meer { display: inline-block; margin-top: .6rem; font-weight: 700; color: var(--amber-licht); }
+
+/* Nu op de tap */
+.tap-kaart { background: rgba(29,16,9,.65); border: 1px solid var(--lijn); border-radius: 10px; padding: 1.4rem; box-shadow: 0 0 24px rgba(243,201,120,.08); }
+.tap-lijst { list-style: none; }
+.tap-lijst li { display: grid; grid-template-columns: auto 1fr auto; gap: .2rem .7rem; align-items: baseline; padding: .55rem 0; border-bottom: 1px dotted var(--lijn); }
+.tap-lijst li:last-child { border-bottom: 0; }
+.tap-lijst .naam { font-weight: 700; }
+.tap-lijst .stijl { opacity: .75; font-size: .92rem; }
+.tap-lijst .sterkte { color: var(--amber-licht); font-variant-numeric: tabular-nums; font-weight: 700; }
+.tap-lijst .stijl::before { content: "·"; margin-right: .5rem; color: var(--amber); }
+.tap-noot { font-size: .85rem; opacity: .7; margin-top: .8rem; }
+
+/* Komende activiteiten */
+.komend-lijst { list-style: none; display: grid; gap: 1rem; }
+.komend-lijst .evenement { height: 100%; }
+.meer-knop { margin-top: 1.4rem; }
+.midden .meer-knop { display: flex; justify-content: center; }
+
+/* Mozaïek van foto's */
+.mozaiek { display: grid; gap: .6rem; grid-template-columns: repeat(2, 1fr); }
+.mozaiek .tegel { aspect-ratio: 1; border-radius: 10px; border: 1px solid var(--lijn); }
+.mozaiek .tegel.groot { grid-column: span 2; aspect-ratio: 2 / 1; }
+.mozaiek .tegel.breed { grid-column: span 2; aspect-ratio: 2 / 1; }
+@media (min-width: 760px) { .mozaiek .tegel.breed { grid-column: auto; aspect-ratio: auto; } }
+
+/* Rij met kleine blokjes + icoon */
+.icoon-rij { display: grid; gap: 1rem; grid-template-columns: repeat(2, 1fr); }
+.icoon-blok { text-align: center; background: rgba(29,16,9,.65); border: 1px solid var(--lijn); border-radius: 10px; padding: 1.3rem .8rem; }
+.icoon-blok svg { width: 46px; height: 46px; stroke: var(--amber); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; margin-bottom: .5rem; }
+.icoon-blok h3 { font-size: 1.15rem; color: var(--amber); }
+.icoon-blok p { font-size: .95rem; opacity: .85; margin-top: .2rem; }
+
+/* Verhaal: foto naast tekst */
+.verhaal { display: grid; gap: 1.4rem; align-items: center; }
+.verhaal .beeld { min-height: 280px; border-radius: 10px; border: 1px solid var(--lijn); }
+.verhaal h2 { margin-bottom: .6rem; }
+.verhaal p + p { margin-top: .8rem; }
+
+/* Oproep onderaan */
+.cta { text-align: center; padding: 3.2rem 0; border-top: 1px solid var(--lijn); background: radial-gradient(ellipse 60% 100% at 50% 100%, rgba(243,201,120,.18), transparent 75%); }
+.cta h2 { font-size: 2rem; margin-bottom: .4rem; }
+.cta p { opacity: .85; margin-bottom: 1.4rem; }
+.cta .knoppen { justify-content: center; }
+.cta .social { justify-content: center; margin-top: 1rem; }
+
+/* Kaartje met het nummer van het voorstel (alleen om ze uit elkaar te houden) */
+.voorstel-label { position: fixed; left: 12px; bottom: 12px; z-index: 50; background: var(--amber); color: var(--bruin-donker); font-weight: 700; font-size: .85rem; padding: .35rem .8rem; border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.5); }
+
+@media (min-width: 760px) {
+  .fotokaarten { grid-template-columns: repeat(3, 1fr); }
+  .fotokaart { min-height: 380px; }
+  .komend-lijst { grid-template-columns: repeat(3, 1fr); }
+  .komend-lijst .evenement { flex-direction: column; }
+  .komend-lijst .evenement .datum { flex: none; width: 4.2rem; }
+  .mozaiek { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 190px; }
+  .mozaiek .tegel { aspect-ratio: auto; }
+  .mozaiek .tegel.groot { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
+  .icoon-rij { grid-template-columns: repeat(4, 1fr); }
+  .verhaal { grid-template-columns: 1fr 1fr; gap: 2.4rem; }
+  .verhaal.omgekeerd .beeld { order: 2; }
+  .tap-twee { columns: 2; column-gap: 2.4rem; }
+  .tap-twee li { break-inside: avoid; }
+}
+
+.cta .social a { max-width: none; flex: 0 1 auto; padding: .75rem 1.5rem; font-size: 1rem; }
