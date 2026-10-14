@@ -94,19 +94,6 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
 .social a.fb { background: #1877F2; }
 .kleinste { margin-top: 1.6rem; padding-top: 1rem; border-top: 1px solid rgba(243,231,208,.15); font-size: .85rem; opacity: .7; text-align: center; }
 
-/* Pagina-kop (menu, agenda, contact) */
-.pagina-kop {
-  padding: 4.2rem 0 3rem; border-bottom: 1px solid var(--lijn); text-align: center; color: var(--creme);
-  /* Zelfde foto als op de homepage. Ontbreekt de foto, dan blijft de placeholder zichtbaar. */
-  background:
-    linear-gradient(180deg, rgba(42,26,16,.45), rgba(29,16,9,.9)),
-    url("images/hero.jpg") center / cover no-repeat,
-    url("images/hero-placeholder.svg") center / cover no-repeat,
-    var(--bruin-donker);
-}
-.pagina-kop h1 { font-size: clamp(2.2rem, 8vw, 3.4rem); text-shadow: 0 0 30px rgba(243,201,120,.35); }
-.pagina-kop p { opacity: .85; margin-top: .4rem; }
-
 /* Menukaart */
 .menu-raster { display: grid; gap: 1.4rem; }
 .menu-categorie { background: rgba(29,16,9,.65); border: 1px solid var(--lijn); border-radius: 10px; padding: 1.4rem; box-shadow: 0 0 24px rgba(243,201,120,.08); }

@@ -68,12 +68,12 @@ Open `events.js`. Elk evenement is een blok tussen accolades:
 
 ## Foto's
 
-De homepage en de bannertjes op de andere pagina's gebruiken `images/hero.jpg`.
+Alle pagina's gebruiken `images/hero.jpg` als banner. De homepage heeft de hoge banner, de andere pagina's de lage (`hero laag`, precies half zo hoog).
 
 Let op: de foto is klein (399 x 352 pixels) en ziet er op een groot scherm korrelig uit. Gebruik later liever een eigen foto van het café, liefst liggend en minstens 1600 pixels breed.
 
 Eigen foto gebruiken:
 1. Zet de foto in `images/`, bijvoorbeeld als `hero-nieuw.jpg`.
-2. Vervang `images/hero.jpg` in `index.html` en in `style.css` (bij `.pagina-kop`) door `images/hero-nieuw.jpg`.
+2. Vervang `images/hero.jpg` door `images/hero-nieuw.jpg` in `index.html`, `menu.html`, `agenda.html` en `contact.html` (zoek op `hero.jpg`).
 
 Nieuwe foto's om te bekijken kun je eerst in `images/nieuw/` zetten. Ontbreekt de foto, dan toont de site de placeholder `images/hero-placeholder.svg`.
