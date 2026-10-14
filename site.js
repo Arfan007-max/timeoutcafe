@@ -51,12 +51,15 @@ function bouwHeader() {
 }
 
 function bouwFooter() {
-  return `<footer class="site-footer"><div class="wrap">
-    <div class="footer-raster">
-      <div><h3>Adres &amp; contact</h3>
+  // Op een pagina met <body data-footer-contact="uit"> blijft het blok "Adres & contact" weg (nu: menukaart)
+  const toonContact = document.body.dataset.footerContact !== "uit";
+  const contactBlok = toonContact ? `<div><h3>Adres &amp; contact</h3>
         <p>${SITE.adres}<br>${SITE.plaats}<br>
         <a href="tel:${SITE.telefoonLink}">${SITE.telefoon}</a><br>
-        <a href="mailto:${SITE.email}">${SITE.email}</a></p></div>
+        <a href="mailto:${SITE.email}">${SITE.email}</a></p></div>` : "";
+  return `<footer class="site-footer"><div class="wrap">
+    <div class="footer-raster">
+      ${contactBlok}
       <div><h3>Volg ons</h3>
         <div class="social">
           <a class="ig" href="${SITE.instagram}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>Instagram</a>
