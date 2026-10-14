@@ -61,15 +61,16 @@ function bouwFooter() {
         <p>${SITE.adres}<br>${SITE.plaats}<br>
         <a href="tel:${SITE.telefoonLink}">${SITE.telefoon}</a><br>
         <a href="mailto:${SITE.email}">${SITE.email}</a></p></div>` : "";
-  return `<footer class="site-footer"><div class="wrap">
-    <div class="footer-raster">
-      ${contactBlok}
-      <div><h3>Volg ons</h3>
+  // Op een pagina met <body data-footer-volg="uit"> blijft het blok "Volg ons" weg (nu: contact)
+  const toonVolg = document.body.dataset.footerVolg !== "uit";
+  const volgBlok = toonVolg ? `<div><h3>Volg ons</h3>
         <div class="social">
           <a class="ig" href="${SITE.instagram}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>Instagram</a>
           <a class="fb" href="${SITE.facebook}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="#fff" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H6v4h3v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg>Facebook</a>
-        </div></div>
-    </div>
+        </div></div>` : "";
+  const raster = (contactBlok || volgBlok) ? `<div class="footer-raster">${contactBlok}${volgBlok}</div>` : "";
+  return `<footer class="site-footer"><div class="wrap">
+    ${raster}
     <p class="kleinste">&copy; ${new Date().getFullYear()} ${SITE.naam} &middot; ${SITE.plaats}</p>
   </div></footer>`;
 }
