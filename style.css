@@ -83,11 +83,6 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
 .tijden td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
 .opmerking { font-size: .9rem; opacity: .75; margin-top: .6rem; }
 
-/* Footer */
-.site-footer { background: var(--bruin-donker); color: var(--creme); border-top: 1px solid var(--lijn); padding: 2.2rem 0 1.4rem; font-size: .98rem; }
-.footer-raster { display: grid; gap: 1.6rem; }
-.site-footer h3 { font-size: 1.1rem; color: var(--amber-licht); margin-bottom: .5rem; }
-.site-footer a { color: var(--amber-licht); }
 .social { display: flex; flex-wrap: nowrap; gap: .6rem; margin-top: .4rem; }
 /* Instagram en Facebook staan altijd naast elkaar, op elk schermformaat */
 .social a { flex: 1 1 0; min-width: 0; max-width: 11rem; display: inline-flex; align-items: center; justify-content: center; gap: .4rem; border-radius: 999px; padding: .55rem .7rem; text-decoration: none; color: #fff; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 14px rgba(0,0,0,.4); transition: transform .15s; }
@@ -154,7 +149,6 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
   .hoofdmenu a { border: 0; padding: .4rem 0; }
   .info-raster { grid-template-columns: 1fr 1fr; }
   .info-raster.een { grid-template-columns: 1fr; }
-  .footer-raster { grid-template-columns: repeat(2, 1fr); }
   .hero .wrap { min-height: 74vh; }
   .hero.laag .wrap { min-height: 37vh; }
 }

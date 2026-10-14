@@ -1,4 +1,4 @@
-/* Time Out Cafe: gedeelde gegevens, header en footer.
+/* Time Out Cafe: gedeelde gegevens en header.
    Pas hier de gegevens aan. Ze verschijnen automatisch op alle pagina's. */
 const SITE = {
   naam: "Time Out Cafe",
@@ -54,28 +54,8 @@ function bouwHeader() {
   </div></header>`;
 }
 
-function bouwFooter() {
-  // Op een pagina met <body data-footer-contact="uit"> blijft het blok "Adres & contact" weg (nu: menukaart)
-  const toonContact = document.body.dataset.footerContact !== "uit";
-  const contactBlok = toonContact ? `<div><h3>Adres &amp; contact</h3>
-        <p>${SITE.adres}<br>${SITE.plaats}<br>
-        <a href="tel:${SITE.telefoonLink}">${SITE.telefoon}</a><br>
-        <a href="mailto:${SITE.email}">${SITE.email}</a></p></div>` : "";
-  // Op een pagina met <body data-footer-volg="uit"> blijft het blok "Volg ons" weg (nu: contact)
-  const toonVolg = document.body.dataset.footerVolg !== "uit";
-  const volgBlok = toonVolg ? `<div><h3>Volg ons</h3>
-        <div class="social">
-          <a class="ig" href="${SITE.instagram}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>Instagram</a>
-          <a class="fb" href="${SITE.facebook}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="#fff" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H6v4h3v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg>Facebook</a>
-        </div></div>` : "";
-  const raster = (contactBlok || volgBlok) ? `<div class="footer-raster">${contactBlok}${volgBlok}</div>` : "";
-  if (!raster) return "";   // geen blokken in de footer: dan ook geen footer
-  return `<footer class="site-footer"><div class="wrap">${raster}</div></footer>`;
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   document.body.insertAdjacentHTML("afterbegin", bouwHeader());
-  document.body.insertAdjacentHTML("beforeend", bouwFooter());
 
   // Gegevens invullen op plekken met data-site="..."
   document.querySelectorAll("[data-site]").forEach(el => {

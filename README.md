@@ -23,7 +23,7 @@ Ga daarna in je browser naar http://localhost:8000. Stoppen doe je met `Ctrl + C
 | `agenda.html` | Agenda met activiteiten |
 | `contact.html` | Adres, telefoon, e-mail, openingstijden en kaart |
 | `style.css` | Eén stylesheet voor alle pagina's (de kleuren staan bovenaan) |
-| `site.js` | Gegevens van het café, header en footer, en de agenda-weergave |
+| `site.js` | Gegevens van het café, header, en de agenda-weergave |
 | `events.js` | De lijst met activiteiten |
 | `images/` | Afbeeldingen |
 | `coming-soon.html` | De eerdere "binnenkort open"-pagina |
