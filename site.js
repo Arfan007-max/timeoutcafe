@@ -53,7 +53,6 @@ function bouwHeader() {
 function bouwFooter() {
   return `<footer class="site-footer"><div class="wrap">
     <div class="footer-raster">
-      <div><h3>Openingstijden</h3><table class="footer-tijden">${tijdenRijen()}</table></div>
       <div><h3>Adres &amp; contact</h3>
         <p>${SITE.adres}<br>${SITE.plaats}<br>
         <a href="tel:${SITE.telefoonLink}">${SITE.telefoon}</a><br>

@@ -30,7 +30,7 @@ Ga daarna in je browser naar http://localhost:8000. Stoppen doe je met `Ctrl + C
 
 ## Gegevens van het café aanpassen
 
-Open `site.js`. Bovenaan staat het blok `SITE`. Pas daar adres, telefoon, e-mail, openingstijden en de links naar Facebook en Instagram aan. De wijziging staat daarna op alle pagina's, ook in de footer.
+Open `site.js`. Bovenaan staat het blok `SITE`. Pas daar adres, telefoon, e-mail, openingstijden en de links naar Facebook en Instagram aan. De wijziging staat daarna op alle pagina's. De openingstijden verschijnen alleen op de contactpagina.
 
 Openingstijden zijn nu `00.00 - 00.00`. Vervang ze, bijvoorbeeld door `16.00 - 00.00` of `Gesloten`.
 

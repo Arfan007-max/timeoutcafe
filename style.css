@@ -85,9 +85,6 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
 .footer-raster { display: grid; gap: 1.6rem; }
 .site-footer h3 { font-size: 1.1rem; color: var(--amber-licht); margin-bottom: .5rem; }
 .site-footer a { color: var(--amber-licht); }
-.footer-tijden { width: 100%; max-width: 20rem; border-collapse: collapse; }
-.footer-tijden td { padding: .15rem 0; }
-.footer-tijden td:last-child { text-align: right; }
 .social { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .4rem; }
 .social a { display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px; padding: .5rem 1.1rem; text-decoration: none; color: #fff; font-weight: 700; box-shadow: 0 4px 14px rgba(0,0,0,.4); transition: transform .15s; }
 .social a:hover { transform: translateY(-2px); color: #fff; }
@@ -149,7 +146,7 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
   .hoofdmenu a { border: 0; padding: .4rem 0; }
   .info-raster { grid-template-columns: 1fr 1fr; }
   .info-raster.een { grid-template-columns: 1fr; }
-  .footer-raster { grid-template-columns: repeat(3, 1fr); }
+  .footer-raster { grid-template-columns: repeat(2, 1fr); }
   .hero .wrap { min-height: 74vh; }
 }
 
