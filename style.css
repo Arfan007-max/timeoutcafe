@@ -88,8 +88,10 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
 .footer-raster { display: grid; gap: 1.6rem; }
 .site-footer h3 { font-size: 1.1rem; color: var(--amber-licht); margin-bottom: .5rem; }
 .site-footer a { color: var(--amber-licht); }
-.social { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .4rem; }
-.social a { display: inline-flex; align-items: center; gap: .5rem; border-radius: 999px; padding: .5rem 1.1rem; text-decoration: none; color: #fff; font-weight: 700; box-shadow: 0 4px 14px rgba(0,0,0,.4); transition: transform .15s; }
+.social { display: flex; flex-wrap: nowrap; gap: .6rem; margin-top: .4rem; }
+/* Instagram en Facebook staan altijd naast elkaar, op elk schermformaat */
+.social a { flex: 1 1 0; min-width: 0; max-width: 11rem; display: inline-flex; align-items: center; justify-content: center; gap: .4rem; border-radius: 999px; padding: .55rem .7rem; text-decoration: none; color: #fff; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 14px rgba(0,0,0,.4); transition: transform .15s; }
+.social a svg { flex: none; }
 .social a:hover { transform: translateY(-2px); color: #fff; }
 .social a.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 .social a.fb { background: #1877F2; }
@@ -119,7 +121,7 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
 
 /* Contact */
 .tekstlink { color: var(--amber-licht); }
-.social-rij { display: flex; flex-wrap: wrap; gap: .6rem; }
+.social-rij { gap: .6rem; }
 .kaart-embed { position: relative; border: 1px solid var(--lijn); border-radius: 10px; overflow: hidden; background: var(--bruin-donker); min-height: 320px; }
 .kaart-link { position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 1rem; text-decoration: none; }
 .kaart-link span { background: var(--amber); color: var(--bruin-donker); font-weight: 700; padding: .55rem 1.2rem; border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.5); transition: transform .15s; }
