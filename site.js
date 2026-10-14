@@ -7,7 +7,7 @@ const SITE = {
   plaats: "Hoogeveen",
   telefoon: "06 11167190",
   telefoonLink: "+31611167190",
-  email: "timeoutcafe007@gmail.com",
+  email: "timeoutcafehoogeveen@gmail.com",
   facebook: "#",   // vul hier de link naar jullie Facebook-pagina in
   instagram: "#",  // vul hier de link naar jullie Instagram-pagina in
   // Openingstijden: pas de tijden aan, bijvoorbeeld "16.00 - 00.00" of "Gesloten"
