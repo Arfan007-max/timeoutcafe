@@ -1,0 +1,103 @@
+/* Time Out Cafe, gedeelde stijl voor alle pagina's. Mobile-first. */
+:root {
+  --bruin-donker: #2a1a10;
+  --bruin: #3b2415;
+  --hout: #6b4226;
+  --amber: #d9a441;
+  --amber-licht: #f0c675;
+  --creme: #f3e7d0;
+  --creme-donker: #e6d4b3;
+  --tekst: #2a1a10;
+  --font-kop: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-tekst: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-tekst); font-size: 1.05rem; line-height: 1.65;
+  color: var(--tekst); background: var(--creme);
+  min-height: 100vh; display: flex; flex-direction: column;
+}
+main { flex: 1; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
+
+.wrap { width: min(1080px, 100% - 2rem); margin-inline: auto; }
+.sectie { padding: 3rem 0; }
+.sectie.donker { background: var(--bruin); color: var(--creme); }
+.sectie h2 { font-size: 1.9rem; margin-bottom: .6rem; }
+.sectie .lead { opacity: .85; margin-bottom: 1.6rem; }
+.midden { text-align: center; }
+
+/* Knoppen */
+.knop {
+  display: inline-block; padding: .8rem 1.6rem; border-radius: 4px;
+  background: var(--amber); color: var(--bruin-donker); font-weight: 700;
+  text-decoration: none; border: 2px solid var(--amber); transition: background .15s, color .15s;
+}
+.knop:hover, .knop:focus-visible { background: var(--amber-licht); border-color: var(--amber-licht); }
+.knop.omlijnd { background: transparent; color: var(--creme); border-color: var(--creme); }
+.knop.omlijnd:hover, .knop.omlijnd:focus-visible { background: var(--creme); color: var(--bruin-donker); }
+.knoppen { display: flex; flex-wrap: wrap; gap: .8rem; }
+.midden .knoppen { justify-content: center; }
+
+/* Header */
+.site-header { position: sticky; top: 0; z-index: 20; background: var(--bruin-donker); color: var(--creme); border-bottom: 2px solid var(--hout); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; min-height: 62px; }
+.merk { font-family: var(--font-kop); font-size: 1.35rem; font-weight: 700; text-decoration: none; color: var(--amber-licht); }
+.menu-knop { background: none; border: 2px solid var(--creme); color: var(--creme); border-radius: 4px; padding: .35rem .7rem; font: inherit; cursor: pointer; }
+.hoofdmenu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--bruin-donker); border-bottom: 2px solid var(--hout); padding: .5rem 1rem 1rem; }
+.hoofdmenu.open { display: block; }
+.hoofdmenu a { display: block; padding: .75rem .25rem; text-decoration: none; border-bottom: 1px solid rgba(243,231,208,.15); }
+.hoofdmenu a[aria-current="page"] { color: var(--amber-licht); font-weight: 700; }
+.hoofdmenu a:hover { color: var(--amber-licht); }
+
+/* Hero */
+.hero { position: relative; color: var(--creme); background: var(--bruin-donker); isolation: isolate; }
+.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(42,26,16,.35), rgba(42,26,16,.85)); }
+.hero .wrap { min-height: 68vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem 0 2.5rem; }
+.hero h1 { font-size: clamp(2.6rem, 11vw, 4.6rem); color: var(--creme); text-shadow: 0 3px 18px rgba(0,0,0,.6); }
+.hero .slogan { font-family: var(--font-kop); font-style: italic; font-size: clamp(1.15rem, 4vw, 1.6rem); color: var(--amber-licht); margin: .5rem 0 1.4rem; }
+
+/* Intro */
+.intro { max-width: 40rem; }
+.intro p { font-size: 1.15rem; }
+
+/* Blokken met info */
+.info-raster { display: grid; gap: 1.2rem; }
+.kaart { background: var(--creme); color: var(--tekst); border: 2px solid var(--hout); border-radius: 6px; padding: 1.4rem; }
+.sectie.donker .kaart { background: var(--bruin-donker); color: var(--creme); border-color: var(--hout); }
+.kaart h3 { font-size: 1.3rem; margin-bottom: .7rem; color: var(--hout); }
+.sectie.donker .kaart h3 { color: var(--amber-licht); }
+.tijden { width: 100%; border-collapse: collapse; }
+.tijden td { padding: .35rem 0; border-bottom: 1px dotted rgba(107,66,38,.5); }
+.tijden td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.opmerking { font-size: .9rem; opacity: .75; margin-top: .6rem; }
+
+/* Footer */
+.site-footer { background: var(--bruin-donker); color: var(--creme); border-top: 2px solid var(--hout); padding: 2.2rem 0 1.4rem; font-size: .98rem; }
+.footer-raster { display: grid; gap: 1.6rem; }
+.site-footer h3 { font-size: 1.1rem; color: var(--amber-licht); margin-bottom: .5rem; }
+.site-footer a { color: var(--amber-licht); }
+.footer-tijden { width: 100%; max-width: 20rem; border-collapse: collapse; }
+.footer-tijden td { padding: .15rem 0; }
+.footer-tijden td:last-child { text-align: right; }
+.social { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .4rem; }
+.social a { border: 1px solid var(--hout); border-radius: 999px; padding: .3rem .9rem; text-decoration: none; color: var(--creme); }
+.social a:hover { border-color: var(--amber-licht); color: var(--amber-licht); }
+.kleinste { margin-top: 1.6rem; padding-top: 1rem; border-top: 1px solid rgba(243,231,208,.15); font-size: .85rem; opacity: .7; text-align: center; }
+
+/* Vanaf tablet */
+@media (min-width: 760px) {
+  .menu-knop { display: none; }
+  .hoofdmenu { display: flex; position: static; background: none; border: 0; padding: 0; gap: 1.6rem; }
+  .hoofdmenu a { border: 0; padding: .4rem 0; }
+  .info-raster { grid-template-columns: 1fr 1fr; }
+  .footer-raster { grid-template-columns: repeat(3, 1fr); }
+  .hero .wrap { min-height: 74vh; }
+}
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Time Out Café Hoogeveen – Binnenkort open</title>
+<meta name="description" content="Time Out Café, gezellig bruin café in Hoogeveen om te dansen en te drinken, opent binnenkort.">
+<meta property="og:title" content="Time Out Café Hoogeveen – Binnenkort open">
+<meta property="og:description" content="Gezellig bruin café in Hoogeveen om te dansen en te drinken. Binnenkort open!">
+<meta property="og:type" content="website">
+<style>
+  :root { --b0:#1d1009; --b1:#2e1b0e; --b2:#4a2c19; --cream:#eadcbf; --glow:#f3c978; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 32px 18px; text-align: center;
+    color: var(--cream); font-family: Georgia, "Times New Roman", serif;
+    background:
+      radial-gradient(ellipse 60% 45% at 50% 0%, rgba(243,201,120,.28), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 50% 100%, rgba(243,201,120,.14), transparent 70%),
+      repeating-linear-gradient(90deg, rgba(0,0,0,.22) 0 2px, transparent 2px 96px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.02) 0 3px, rgba(0,0,0,.05) 3px 6px),
+      linear-gradient(180deg, #3a2213, var(--b0));
+  }
+  main { max-width: 640px; width: 100%; }
+  .lamps { display: flex; justify-content: center; gap: 44px; margin-bottom: 20px; }
+  .lamp { width: 2px; background: var(--cream); opacity: .8; position: relative; }
+  .lamp::after { content: ""; position: absolute; left: 50%; bottom: -15px; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 50%;
+    background: var(--glow); box-shadow: 0 0 30px 10px rgba(243,201,120,.55); animation: glow 3.5s ease-in-out infinite; }
+  .lamp:nth-child(1) { height: 36px; } .lamp:nth-child(2) { height: 66px; } .lamp:nth-child(3) { height: 46px; }
+  .lamp:nth-child(2)::after { animation-delay: 1s; } .lamp:nth-child(3)::after { animation-delay: 2s; }
+  @keyframes glow { 50% { box-shadow: 0 0 42px 16px rgba(243,201,120,.75); } }
+  .top { margin-top: 44px; letter-spacing: .4em; text-transform: uppercase; font-size: .75rem; color: var(--glow); }
+  .big {
+    display: inline-block; margin: 20px 0 18px; padding: 14px 34px; border: 4px solid var(--glow); border-radius: 18px;
+    font-size: clamp(1.9rem, 8vw, 3.8rem); font-weight: 400; font-style: italic; color: #fff3d6; letter-spacing: .03em;
+    text-shadow: 0 0 6px #fff, 0 0 20px var(--glow), 0 0 44px #ff9d2e;
+    box-shadow: 0 0 14px var(--glow), inset 0 0 14px rgba(243,201,120,.6), 0 0 60px rgba(243,201,120,.35); background: rgba(29,16,9,.55);
+    animation: flick 5s infinite;
+  }
+  @keyframes flick { 0%,92%,96%,100% { opacity: 1 } 94% { opacity: .55 } 98% { opacity: .8 } }
+  h1 { font-size: clamp(2.4rem, 9vw, 4rem); line-height: 1.05; margin-bottom: 6px; text-shadow: 0 3px 18px rgba(0,0,0,.7); }
+  h1 em { font-weight: 400; color: var(--glow); }
+  .say { font-style: italic; font-size: 1.2rem; margin-bottom: 20px; }
+  p { line-height: 1.75; font-size: 1.1rem; margin: 0 auto 20px; max-width: 480px; }
+  .info { font-size: 1rem; line-height: 1.85; }
+  .info a { color: var(--glow); }
+  .social { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 26px; color: #fff; text-decoration: none; font-weight: 700; font-family: Arial, Helvetica, sans-serif; border-radius: 999px; box-shadow: 0 6px 18px rgba(0,0,0,.45); transition: transform .15s; }
+  .btn:hover { transform: translateY(-2px); }
+  .ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+  .fb { background: #1877F2; }
+  footer { margin-top: 34px; font-size: .8rem; opacity: .7; }
+</style>
+</head>
+<body>
+<main>
+  <div class="lamps" aria-hidden="true"><div class="lamp"></div><div class="lamp"></div><div class="lamp"></div></div>
+  <div class="top">Bruin café &middot; Hoogeveen</div>
+  <div class="big">Binnenkort open</div>
+  <h1>Time Out <em>Café</em></h1>
+  <div class="say">Gezelligheid kent geen tijd</div>
+  <p>Een ouderwets gezellig café om te dansen en te drinken. Warm licht, koude drankjes en goed gezelschap.</p>
+  <div class="info">Hoofdstraat 17, 7902 CD Hoogeveen<br>
+    <a href="tel:+31611167190">06 - 11 16 71 90</a> &middot;
+    <a href="mailto:timeoutcafehoogeveen@gmail.com">timeoutcafehoogeveen@gmail.com</a></div>
+  <div class="social">
+    <a class="btn ig" href="#"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg> Instagram</a>
+    <a class="btn fb" href="#"><svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H6v4h3v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg> Facebook</a>
+  </div>
+  <footer>&copy; 2026 Time Out Café &middot; Hoogeveen</footer>
+</main>
+</body>
+</html>

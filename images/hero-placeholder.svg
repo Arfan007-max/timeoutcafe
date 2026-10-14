@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder voor een sfeerfoto van het café">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="25%" r="55%"><stop offset="0" stop-color="#d9a441" stop-opacity=".55"/><stop offset="1" stop-color="#d9a441" stop-opacity="0"/></radialGradient>
+    <pattern id="w" width="120" height="30" patternUnits="userSpaceOnUse"><rect width="120" height="30" fill="#3b2415"/><rect width="3" height="30" fill="#2a1a10"/></pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#w)"/>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <g fill="#2a1a10" stroke="#f3e7d0" stroke-opacity=".6" stroke-width="4"><path d="M 470 330 L 490 250 H 560 L 580 330 Z"/><path d="M 760 300 L 780 210 H 850 L 870 300 Z"/><path d="M 1050 330 L 1070 250 H 1140 L 1160 330 Z"/></g>
+  <g stroke="#f3e7d0" stroke-opacity=".7" stroke-width="4"><line x1="525" y1="0" x2="525" y2="250"/><line x1="815" y1="0" x2="815" y2="210"/><line x1="1105" y1="0" x2="1105" y2="250"/></g>
+  <g fill="#d9a441"><ellipse cx="525" cy="332" rx="52" ry="12"/><ellipse cx="815" cy="302" rx="52" ry="12"/><ellipse cx="1105" cy="332" rx="52" ry="12"/></g>
+  <rect y="700" width="1600" height="200" fill="#4a2e1b"/><rect y="690" width="1600" height="26" fill="#6b4226"/>
+  <text x="800" y="500" text-anchor="middle" font-family="Georgia, serif" font-size="38" fill="#f3e7d0" fill-opacity=".75">Hier komt een sfeerfoto van het café</text>
+</svg>

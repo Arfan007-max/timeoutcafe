@@ -1,0 +1,85 @@
+/* Time Out Cafe: gedeelde gegevens, header en footer.
+   Pas hier de gegevens aan. Ze verschijnen automatisch op alle pagina's. */
+const SITE = {
+  naam: "Time Out Cafe",
+  slogan: "Gezelligheid kent geen tijd",
+  adres: "Grotekerkstraat 17",
+  plaats: "Hoogeveen",
+  telefoon: "06 11167190",
+  telefoonLink: "+31611167190",
+  email: "timeoutcafe007@gmail.com",
+  facebook: "#",   // vul hier de link naar jullie Facebook-pagina in
+  instagram: "#",  // vul hier de link naar jullie Instagram-pagina in
+  // Openingstijden: pas de tijden aan, bijvoorbeeld "16.00 - 00.00" of "Gesloten"
+  tijden: [
+    ["Maandag", "00.00 - 00.00"],
+    ["Dinsdag", "00.00 - 00.00"],
+    ["Woensdag", "00.00 - 00.00"],
+    ["Donderdag", "00.00 - 00.00"],
+    ["Vrijdag", "00.00 - 00.00"],
+    ["Zaterdag", "00.00 - 00.00"],
+    ["Zondag", "00.00 - 00.00"]
+  ]
+};
+
+const PAGINAS = [
+  ["index.html", "Home", "home"],
+  ["menu.html", "Menukaart", "menu"],
+  ["agenda.html", "Agenda", "agenda"],
+  ["contact.html", "Contact", "contact"]
+];
+
+const mapsLink = "https://www.google.com/maps/search/?api=1&query=" +
+  encodeURIComponent(SITE.adres + ", " + SITE.plaats);
+
+function tijdenRijen() {
+  return SITE.tijden.map(([dag, tijd]) => `<tr><td>${dag}</td><td>${tijd}</td></tr>`).join("");
+}
+
+function bouwHeader() {
+  const huidig = document.body.dataset.pagina;
+  const links = PAGINAS.map(([url, tekst, id]) =>
+    `<a href="${url}"${id === huidig ? ' aria-current="page"' : ""}>${tekst}</a>`).join("");
+  return `<header class="site-header"><div class="wrap">
+    <a class="merk" href="index.html">${SITE.naam}</a>
+    <button class="menu-knop" type="button" aria-expanded="false" aria-controls="hoofdmenu">Menu</button>
+    <nav class="hoofdmenu" id="hoofdmenu" aria-label="Hoofdmenu">${links}</nav>
+  </div></header>`;
+}
+
+function bouwFooter() {
+  return `<footer class="site-footer"><div class="wrap">
+    <div class="footer-raster">
+      <div><h3>Openingstijden</h3><table class="footer-tijden">${tijdenRijen()}</table></div>
+      <div><h3>Adres &amp; contact</h3>
+        <p>${SITE.adres}<br>${SITE.plaats}<br>
+        <a href="tel:${SITE.telefoonLink}">${SITE.telefoon}</a><br>
+        <a href="mailto:${SITE.email}">${SITE.email}</a></p></div>
+      <div><h3>Volg ons</h3>
+        <div class="social"><a href="${SITE.facebook}">Facebook</a><a href="${SITE.instagram}">Instagram</a></div></div>
+    </div>
+    <p class="kleinste">&copy; ${new Date().getFullYear()} ${SITE.naam} &middot; ${SITE.plaats}</p>
+  </div></footer>`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.insertAdjacentHTML("afterbegin", bouwHeader());
+  document.body.insertAdjacentHTML("beforeend", bouwFooter());
+
+  // Gegevens invullen op plekken met data-site="..."
+  document.querySelectorAll("[data-site]").forEach(el => {
+    const sleutel = el.dataset.site;
+    if (sleutel === "tijden") el.innerHTML = tijdenRijen();
+    else if (sleutel === "maps") el.href = mapsLink;
+    else if (sleutel === "adres") el.innerHTML = `${SITE.adres}<br>${SITE.plaats}`;
+    else if (SITE[sleutel]) el.textContent = SITE[sleutel];
+  });
+
+  // Mobiel menu
+  const knop = document.querySelector(".menu-knop");
+  const menu = document.getElementById("hoofdmenu");
+  knop.addEventListener("click", () => {
+    const open = menu.classList.toggle("open");
+    knop.setAttribute("aria-expanded", String(open));
+  });
+});
