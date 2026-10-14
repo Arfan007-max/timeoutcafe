@@ -32,6 +32,10 @@ const PAGINAS = [
 const mapsLink = "https://www.google.com/maps/search/?api=1&query=" +
   encodeURIComponent(SITE.adres + ", " + SITE.plaats);
 
+// Opent Google Maps met de routebeschrijving naar het café (vertrekpunt kiest de bezoeker zelf)
+const routeLink = "https://www.google.com/maps/dir/?api=1&destination=" +
+  encodeURIComponent(SITE.adres + ", " + SITE.plaats);
+
 const mapsEmbed = "https://www.google.com/maps?q=" +
   encodeURIComponent(SITE.adres + ", " + SITE.plaats) + "&output=embed";
 
@@ -80,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (sleutel === "tijden") el.innerHTML = tijdenRijen();
     else if (sleutel === "maps") el.href = mapsLink;
     else if (sleutel === "mapsEmbed") el.src = mapsEmbed;
+    else if (sleutel === "routeHref") el.href = routeLink;
     else if (sleutel === "adres") el.innerHTML = `${SITE.adres}<br>${SITE.plaats}`;
     else if (sleutel === "telefoonHref") el.href = "tel:" + SITE.telefoonLink;
     else if (sleutel === "emailHref") el.href = "mailto:" + SITE.email;
