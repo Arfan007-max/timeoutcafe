@@ -98,7 +98,7 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
   /* Zelfde foto als op de homepage. Ontbreekt de foto, dan blijft de placeholder zichtbaar. */
   background:
     linear-gradient(180deg, rgba(42,26,16,.45), rgba(29,16,9,.9)),
-    url("images/hero-tijdelijk.jpg") center / cover no-repeat,
+    url("images/hero.jpg") center / cover no-repeat,
     url("images/hero-placeholder.svg") center / cover no-repeat,
     var(--bruin-donker);
 }

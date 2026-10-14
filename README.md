@@ -68,10 +68,12 @@ Open `events.js`. Elk evenement is een blok tussen accolades:
 
 ## Foto's
 
-De homepage gebruikt `images/hero-tijdelijk.jpg` als sfeerfoto. Dat is een **tijdelijke** foto die niet van ons is. Hij staat alleen op deze computer en wordt niet naar GitHub gestuurd. Zonder die foto toont de site de placeholder `images/hero-placeholder.svg`.
+De homepage en de bannertjes op de andere pagina's gebruiken `images/hero.jpg`. Die foto is met toestemming van De Kuiperij gebruikt, op voorwaarde dat hun logo eruit is. Het logo is weggeknipt (de foto is onderaan bijgesneden). Bewaar de toestemming van De Kuiperij ergens veilig.
 
-Eigen foto van het café gebruiken:
-1. Zet de foto in `images/`, bijvoorbeeld als `hero.jpg`. Liefst liggend en minstens 1600 pixels breed.
-2. Open `index.html` en vervang `images/hero-tijdelijk.jpg` door `images/hero.jpg`.
+Let op: de foto is klein (399 x 352 pixels) en ziet er op een groot scherm korrelig uit. Gebruik later liever een eigen foto van het café, liefst liggend en minstens 1600 pixels breed.
 
-Nieuwe foto's om te bekijken kun je eerst in `images/nieuw/` zetten.
+Eigen foto gebruiken:
+1. Zet de foto in `images/`, bijvoorbeeld als `hero-nieuw.jpg`.
+2. Vervang `images/hero.jpg` in `index.html` en in `style.css` (bij `.pagina-kop`) door `images/hero-nieuw.jpg`.
+
+Nieuwe foto's om te bekijken kun je eerst in `images/nieuw/` zetten. Ontbreekt de foto, dan toont de site de placeholder `images/hero-placeholder.svg`.
