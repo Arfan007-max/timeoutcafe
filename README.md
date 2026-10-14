@@ -68,7 +68,7 @@ Open `events.js`. Elk evenement is een blok tussen accolades:
 
 ## Foto's
 
-De homepage en de bannertjes op de andere pagina's gebruiken `images/hero.jpg`. Die foto is met toestemming van De Kuiperij gebruikt, op voorwaarde dat hun logo eruit is. Het logo is weggeknipt (de foto is onderaan bijgesneden). Bewaar de toestemming van De Kuiperij ergens veilig.
+De homepage en de bannertjes op de andere pagina's gebruiken `images/hero.jpg`.
 
 Let op: de foto is klein (399 x 352 pixels) en ziet er op een groot scherm korrelig uit. Gebruik later liever een eigen foto van het café, liefst liggend en minstens 1600 pixels breed.
 
