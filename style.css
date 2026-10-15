@@ -125,6 +125,7 @@ h1, h2, h3 { font-family: var(--font-kop); line-height: 1.15; }
 /* Is het blok te smal voor de namen, dan blijven alleen de logo's over (alle drie blijven naast elkaar) */
 @container (max-width: 300px) { .social a .tekst { display: none; } .social a { padding: .6rem .3rem; } }
 .kaart-embed { position: relative; border: 1px solid var(--lijn); border-radius: 10px; overflow: hidden; background: var(--bruin-donker); min-height: 320px; }
+.kaart-speld { position: absolute; left: 50%; top: 50%; width: 30px; height: 43px; transform: translate(-50%, -100%); z-index: 1; pointer-events: none; filter: drop-shadow(0 3px 3px rgba(0,0,0,.55)); }
 .kaart-link { position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 1rem; text-decoration: none; }
 .kaart-link span { background: #4285F4; color: #fff; font-weight: 700; padding: .55rem 1.2rem; border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.5); transition: transform .15s; }
 .kaart-link:hover span, .kaart-link:focus-visible span { transform: translateY(-2px); background: #5B95F6; }
